@@ -30,3 +30,4 @@
 
 # Ignore environment variables
 config/database.yml
+db/schema.rb

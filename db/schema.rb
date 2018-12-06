@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_09_213754) do
+=======
+ActiveRecord::Schema.define(version: 2018_12_06_221830) do
+>>>>>>> Create 'Searches' with SimpleForm
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -21,7 +25,10 @@ ActiveRecord::Schema.define(version: 2018_12_09_213754) do
     t.string "languages", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.hstore "results", array: true
+=======
+>>>>>>> Create 'Searches' with SimpleForm
   end
 
 end
