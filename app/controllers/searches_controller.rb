@@ -26,6 +26,20 @@ class SearchesController < ApplicationController
   def create
     @search = Search.new(search_params)
 
+    ## Merging results
+    # Since GitHub's API does not consistently support searching repositories written in a given set of languages at once,
+    # it's necessary to search once for each language and then merge all results into one.
+    search_results = []
+    search_global_count = 0
+    @search.languages.each do |language|
+      git_response = JSON.parse(RestClient.get "#{Search::API_URL}search/repositories?q=language=#{language}&sort=stars", {content_type: :json, accept: :json})
+      search_global_count += git_response["total_count"]
+      search_results += git_response["items"]
+    end
+
+    # Sort all items from all chosen languages by the numbers of stars given
+    search_results.sort_by { |item| item["stargazers_count"] }
+
     respond_to do |format|
       if @search.save
         format.html { redirect_to @search, notice: 'Search was successfully created.' }
@@ -69,6 +83,6 @@ class SearchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:name, :languages)
+      params.require(:search).permit(:name, languages: [])
     end
 end
