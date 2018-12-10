@@ -28,7 +28,7 @@ class SearchesController < ApplicationController
   def update
     respond_to do |format|
       if @search.update(search_params)
-        format.html { redirect_to @search, notice: 'Search was successfully updated.' }
+        format.html { redirect_to @search, notice: 'Search and its results were successfully updated.' }
         format.json { render :show, status: :ok, location: @search }
       else
         format.html { render :edit }

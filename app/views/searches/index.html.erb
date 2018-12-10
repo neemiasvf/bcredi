@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
+<% title 'Searches' %>
+<% page_header 'Searches' %>
+<% new_button 'search' %>
 
-<h1>Searches</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Languages</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @searches.each do |search| %>
-      <tr>
-        <td><%= search.name %></td>
-        <td><%= search.languages %></td>
-        <td><%= link_to 'Show', search %></td>
-        <td><%= link_to 'Edit', edit_search_path(search) %></td>
-        <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Search', new_search_path %>
+<div class="card">
+  <div class="card-header">
+    <i class="fas fa-search"></i> Searches</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+        <div class="row">
+          <table class="table table-bordered dataTable" cellspacing="0">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Languages</th>
+              <th>Total Results</th>
+              <th class="text-center">Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @searches.each do |search| %>
+              <tr>
+                <td><%= search.name %></td>
+                <td><%= languages_labels search.languages %></td>
+                <td><%= search_total_results search %></td>
+                <td class="text-center">
+                  <%= show_button_for_index 'search', search %>
+                  <%= destroy_button_for_index 'search', search %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

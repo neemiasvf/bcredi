@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Demo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <title><%= yield :title %></title>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar fixed-top navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">BCredi</span>
+      <form class="form-inline">
+        <%= yield :home_button %>
+        <%= yield :new_button %>
+        <%= yield :back_button %>
+      </form>
+    </nav>
+
+    <div class="center-large">
+      <h1>
+        <%= yield :page_header %>
+        <small><%= yield :optional_description %></small>
+      </h1>
+
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

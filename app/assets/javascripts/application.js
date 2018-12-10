@@ -12,5 +12,16 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery_ujs
+//= require popper
+//= require bootstrap
+//= require bootstrap-select
 //= require turbolinks
 //= require_tree .
+
+function goBack() {
+    window.history.back();
+}
+
+$.fn.selectpicker.Constructor.BootstrapVersion = '4';

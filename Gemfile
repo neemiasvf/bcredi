@@ -63,3 +63,6 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_form', '~> 4.1'
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
+gem 'bootstrap', '~> 4.1', '>= 4.1.3'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails-assets-bootstrap-select', source: 'https://rails-assets.org'
