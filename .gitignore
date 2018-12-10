@@ -27,3 +27,6 @@
 
 # Ignore JetBrains files
 /.idea/*
+
+# Ignore environment variables
+config/database.yml

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @search.name %>
+</p>
+
+<p>
+  <strong>Languages:</strong>
+  <%= @search.languages %>
+</p>
+
+<p>
+  <strong>Total Number of Repositories Found:</strong>
+  <%= @search_results_count %>
+</p>
+
+<p>
+  <strong>Results:</strong>
+  <%= @search.results %>
+</p>
+
+<%= link_to 'Update Results', update_results_search_path(@search) %> |
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>
