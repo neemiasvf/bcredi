@@ -1,14 +1,9 @@
-
-<%= simple_form_for(@search) do |f| %>
+<%= simple_form_for(@search, wrapper: :input_group) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :languages, collection: GithubLanguages, as: :check_boxes, include_hidden: false %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="center">
+    <%= f.input :name, label: false, placeholder: search_placeholder(@search), custom_append: search_button %>
+    <%= f.input :languages, label: false, collection: GithubLanguages, as: :select, input_html: { class: 'selectpicker', 'data-live-search': true, multiple: 'multiple', 'data-max-options': 5 , 'aria-describedby': 'button-addon', 'data-live-search-placeholder': 'Choose up to 5 languages' }, include_hidden: false %>
   </div>
 <% end %>

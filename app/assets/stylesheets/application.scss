@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import "bootstrap-select";
+
+//use Open Sans font
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a:visited {
+  color: white;
+}
+
+.center {
+  margin: auto;
+  max-width: 60%;
+}
+
+.center-small {
+  margin: auto;
+  max-width: 30%;
+}
+
+.center-large {
+  margin: auto;
+  max-width: 80%;
+}

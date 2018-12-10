@@ -1,25 +1,16 @@
-<p id="notice"><%= notice %></p>
+<% title 'Search Details' %>
+<% page_header 'Search' %>
+<% optional_description "##{@search.id}" %>
+<% home_button %>
+<% new_button 'search' %>
+<% back_button %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @search.name %>
-</p>
+<%= render 'form', search: @search %>
 
-<p>
-  <strong>Languages:</strong>
-  <%= @search.languages %>
-</p>
+<h3 class="text-center">Total Results: <%= search_total_results @search %></h3>
 
-<p>
-  <strong>Total Number of Repositories Found:</strong>
-  <%= @search_results_count %>
-</p>
-
-<p>
-  <strong>Results:</strong>
-  <%= @search.results %>
-</p>
-
-<%= link_to 'Update Results', update_results_search_path(@search) %> |
-<%= link_to 'Edit', edit_search_path(@search) %> |
-<%= link_to 'Back', searches_path %>
+<div class="card-columns">
+  <% @search.results.each do |result| %>
+    <%= render partial: 'result_card', locals: {result: result, label: true } %>
+  <% end %>
+</div>
