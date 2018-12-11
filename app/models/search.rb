@@ -1,5 +1,19 @@
+# == Schema Information
+#
+# Table name: searches
+#
+#  id         :bigint(8)        not null, primary key
+#  name       :string
+#  languages  :string           is an Array
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  results    :hstore           is an Array
+#
+
 class Search < ApplicationRecord
   API_URL = "https://api.github.com/".freeze
+
+  validates :languages, presence: true
 
   before_save :get_results
 

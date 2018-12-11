@@ -39,6 +39,7 @@ gem 'bootsnap', '~> 1.3', '>= 1.3.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '~> 10.0', '>= 10.0.2', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.1'
 end
 
 group :development do
@@ -48,6 +49,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 2.0', '>= 2.0.2'
   gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
+  gem 'annotate', '~> 2.7', '>= 2.7.4'
 end
 
 group :test do
@@ -57,6 +59,11 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper', '~> 2.1'
   gem 'rake', '~> 12.3', '>= 12.3.2'
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
+  gem 'database_cleaner', '~> 1.7'
+  gem 'factory_bot', '~> 4.11', '>= 4.11.1'
+  gem 'faker', '~> 1.9', '>= 1.9.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
