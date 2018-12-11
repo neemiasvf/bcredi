@@ -1,4 +1,5 @@
 ### BCredi | Teste Back End
+[![Build Status](https://travis-ci.com/neemiasvf/bcredi.svg?token=qyvxAVNHoMsUCdYZLTsb&branch=master)](https://travis-ci.com/neemiasvf/bcredi)
 
 Este projeto é uma implementação do teste back end para a BCredi.
 Usando a [API do GitHub](https://developer.github.com/v3/), a aplicação é capaz de buscar e armazenar os repositórios destaques
