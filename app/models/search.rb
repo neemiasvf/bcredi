@@ -1,6 +1,8 @@
 class Search < ApplicationRecord
   API_URL = "https://api.github.com/".freeze
 
+  validates :languages, presence: true
+
   before_save :get_results
 
   def get_results

@@ -31,6 +31,7 @@
 # Ignore environment variables
 config/database.yml
 db/schema.rb
+.rspec
 
 # Ignore operating system files
 .DS_Store
