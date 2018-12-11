@@ -32,6 +32,7 @@
 config/database.yml
 db/schema.rb
 .rspec
+client-secret.json
 
 # Ignore operating system files
 .DS_Store
