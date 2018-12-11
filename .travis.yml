@@ -6,7 +6,7 @@ before_script:
   - gem install bundler
 deploy:
   provider: gae
-  keyfile: client-secret.json.enc
+  keyfile: client-secret.json
   project: dungeon-001
 before_install:
   - openssl aes-256-cbc -K $encrypted_0b23eceba2f5_key -iv $encrypted_0b23eceba2f5_iv
